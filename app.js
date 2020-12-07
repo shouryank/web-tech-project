@@ -9,7 +9,6 @@ var express = require("express"),
 
 const { userInfo } = require("os");
 var path = require('path');
-var curr_uname;
     
 mongoose.connect("mongodb://localhost:27017/auth_demo_app", { useNewUrlParser: true });    
 var app = express();
@@ -21,13 +20,10 @@ app.use('/styles', express.static('styles'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require("express-session")({
-    secret:"Miss white is my cat",
+    secret:"War Machine is the best",
     resave: false,
     saveUninitialized: false
 }));
-
-let t_shares=[{sym:'AAPL', name:'apple', shares:2, pr:200}, {sym:'AAPL', name:'apple', shares:'4', pr:200}];
-var total = 0;
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -121,22 +117,6 @@ app.post("/create_new_acc", function(req, res){
         });
     });
 });
-
-app.get('/forgot_pass', function(req, res){
-    res.render('forgot_pass');
-});
-
-/*app.post('/forgot_pass', function(req, res){
-    MongoClient.connect('mongodb://localhost:27017',{
-		useUnifiedTopology:true
-	}, function(err,client){
-		if(err) throw err;
-		const db = client.db('auth_demo_app');
-		db.collection('users').findOne({username: req.body.username},function(err,obj){
-            res.render('forgot_pass');
-		});
-	});
-});*/
 
 app.get("/logout", function(req, res){
     req.logout();
