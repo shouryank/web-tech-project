@@ -1,0 +1,37 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Login
+  link(href='styles/login_page.css' rel='stylesheet')
+img.bimage(src='styles/stock market graph.PNG')
+.gradient
+  form.form(style='top:200px;' action='create_new_acc' method='post')
+    label(for='Uname') UserName: 
+    br
+    input#Uname.login(name='username')
+    br
+    br
+    label(for='Pword') Password: 
+    br
+    input#Pword.login(type='password' minlength='8' name='password')
+    br
+    br
+    label(for='confirmq') Which is your favourite fruit?
+    br
+    input#confirmq.login(name='confirmq')
+    br
+    br
+    button.submit Create Account    
+    br
+    br
+    button.submit
+      a.redir(href='login_page') Login Page
+.bottom
+  br
+  p(style='font-size: 32px;') SSS Finanaces
+  br
+  p About Us
+  br
+  br
+  p

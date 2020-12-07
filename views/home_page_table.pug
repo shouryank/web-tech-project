@@ -1,0 +1,30 @@
+extends layout.pug
+
+block head
+  link(href='styles/styles.css' rel='stylesheet')
+  title Home Page
+
+block content
+  table.disp
+    tr.head
+      th Sl.no
+      th Symbol
+      th Name
+      th Shares
+      th Price
+      th Total
+    block contents
+    tr.last
+      td(colspan='2')= " "
+      td.bold(colspan='3')= "GRAND TOTAL:"
+      td= total
+  br
+  br
+  footer.foot
+    p= "Your current stocks"    
+    br
+    br
+    br
+    br
+    a.courtesy(href='https://datahub.io/core/s-and-p-500-companies-financials') Data provided by datahub.io
+

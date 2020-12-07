@@ -1,0 +1,23 @@
+extends layout.pug
+
+block head
+  link(href='styles/styles.css' rel='stylesheet')
+  title Home Page
+
+block content
+  form(method='post' action='buy')
+    .sym
+        label(for='sym') Enter Symbol:
+        br
+        br
+        input#sym(name='sym' type='text' placeholder='Enter symbol')
+        br
+        br
+        input(name='no' type='number' min='1' placeholder='number of stocks')
+        br
+        button.submit Buy
+  if msg
+    br
+    br
+    br
+    p= msg

@@ -1,0 +1,11 @@
+extends home_page_table.pug
+
+block contents
+    each share, i in objs
+      tr
+        td= i+1
+        td= share.Symbols
+        td= share.Name
+        td= share.Quantity
+        td= share.Price
+        td= share.Price * share.Quantity

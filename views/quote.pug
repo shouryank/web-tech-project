@@ -1,0 +1,24 @@
+extends layout.pug
+
+block head
+  link(href='styles/styles.css' rel='stylesheet')
+  title Home Page
+
+block content
+  form(method='post' action='quote')
+    .sym
+        label(for='sym') Enter Symbol:
+        br
+        br
+        input#sym(name='sym' type='text' placeholder='Enter symbol')
+        br
+        button.submit Get Price
+  if obj
+    br
+    br
+    br
+    br
+    p= "Symbol: " + obj.Symbol
+    p= "Name: " + obj.Name 
+    p= "Sector: " + obj.Sector 
+    p= "Price: " + obj.Price

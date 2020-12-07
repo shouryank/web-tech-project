@@ -1,0 +1,74 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Login
+  link(href='styles/login_page.css' rel='stylesheet')
+  script(src='https://unpkg.com/react@16/umd/react.development.js' crossorigin='')
+  script(src='https://unpkg.com/react-dom@16/umd/react-dom.development.js' crossorigin='')
+  script(src='https://unpkg.com/@babel/standalone/babel.min.js')
+  script(type='text/javascript' src='https://code.jquery.com/jquery-3.5.1.min.js')
+img.bimage(src='styles/stock market graph.PNG')
+.gradient
+  form.form(style='top:200px;' action='forgot_pass' method='post')
+    label(for='Uname') UserName: 
+    br
+    input#Uname.login(name='username')
+    br
+    br
+    label(for='confirmq') Which is your favourite fruit?
+    br
+    input#confirmq.login(name='confirmq')
+    br
+    br
+    #container
+    script(type='text/babel').
+      class Counter extends React.Component {
+      constructor (props, context) {
+      super(props, context);
+      this.myText = null;
+      this.setTextRef = element => {
+      this.myText = element;
+      }
+      this.state = {
+      seconds: 20
+      };
+      this.timer = this.timer.bind(this);
+      this.timerhelp = event => {
+      myVar = setInterval(this.timer, 1000);
+      }
+      }
+      timer () {
+      if(this.state.seconds > 0){
+      this.myText.innerHTML = this.state.seconds + " left for the password to dissapear";
+      }
+      else{
+      this.myText.innerHTML = null;
+      clearInterval(myVar);
+      }
+      this.state.seconds = this.state.seconds - 1;
+      }
+      render() {
+      return (
+      <div>
+      <p ref={this.setTextRef}></p>
+      <input onClick={this.timerhelp} className={this.props.css} type="button" value="Get Password"></input>
+      </div>
+      );
+      }
+      }
+      ReactDOM.render(
+      <Counter css="submit"></Counter>,
+      document.querySelector("#container")
+      );
+    br
+    button.submit
+      a.redir(href='login_page') Login Page
+.bottom
+  br
+  p(style='font-size: 32px;') SSS Finanaces
+  br
+  p About Us
+  br
+  br
+  p
